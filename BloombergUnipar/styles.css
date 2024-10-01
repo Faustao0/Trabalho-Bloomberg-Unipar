@@ -1,0 +1,96 @@
+/* Estilo geral da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #9affb7, #c4fac5, #fac4e9, #fbc2eb, #a1c4fd, #c2e9fb); 
+    background-size: 400% 400%; 
+    animation: gradientBG 15s ease infinite; 
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.stock-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.stock-block {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    text-align: center; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.stock-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.stock-block h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.stock-block p {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #27ae60; 
+    margin: 10px 0;
+}
+
+.stock-block img {
+    width: 60px; 
+    height: 60px;
+    display: block;
+    margin: 15px auto;
+}
+
+h2, p {
+    margin: 0;
+}
+
+.stock-block p {
+    transition: color 0.3s ease; 
+}
+
+.stock-block.up p {
+    color: #8ec63f; 
+}
+
+.stock-block.down p {
+    color: #ed5553; 
+}
+
+@media (max-width: 768px) {
+    .stock-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 480px) {
+    .stock-container {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
